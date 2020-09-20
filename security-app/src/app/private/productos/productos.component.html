@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-8 mx-auto">
+    <ul class="list-group">
+      <li class="list-group-item">Tabla productos</li>
+      <li class="list-group-item list-group-item-primary" *ngFor="let prod of productos">
+        {{"Id="+prod.id+","
+        +"Nombre="+prod.nombre
+        +","+"Precio="+prod.precio
+        +","+"Creado_por="+prod.creado_por
+      }}</li>
+    </ul>
+  </div>
+</div>
+
+

@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-8 mx-auto">
+    <ul class="list-group">
+      <li class="list-group-item">Tabla clientes</li>
+      <li class="list-group-item list-group-item-primary" *ngFor="let clie of clientes">
+        {{"Id="+clie.id+","
+        +"Nombre="+clie.nombre
+        +","+"Nit="+clie.nit
+        +","+"Direccion="+clie.direccion}}</li>
+    </ul>
+  </div>
+</div>
+<!--Boton agregar-->
+<div class="row">
+  <div  class="col"></div>
+  <div class="col"><button type="submit" class="btn btn-primary" (click)="onAgregar()">Agregar</button></div>
+  <div  class="col"></div>
+</div>
+
+

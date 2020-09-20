@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-8 mx-auto">
+    <ul class="list-group">
+      <li class="list-group-item">Tabla empleados</li>
+      <li class="list-group-item list-group-item-primary" *ngFor="let emp of empleados">
+        {{"Id="+emp.id+","
+        +"Codigo="+emp.codigo
+        +","+"Nombre="+emp.nombre
+        +","+"Salario="+emp.salario
+      }}</li>
+    </ul>
+  </div>
+</div>
+

@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-8 mx-auto">
+    <ul class="list-group">
+      <li class="list-group-item">Tabla facturas</li>
+      <li class="list-group-item list-group-item-primary" *ngFor="let fact of facturas">
+        {{"Id="+fact.id+","
+        +"cliente_id="+fact.cliente_id
+        +","+"Empleado_id="+fact.empleado_id
+        +","+"creado="+fact.creado
+        +","+"Estado="+fact.estado}}</li>
+    </ul>
+  </div>
+</div>
+
