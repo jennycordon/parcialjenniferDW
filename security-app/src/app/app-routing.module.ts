@@ -8,13 +8,16 @@ import { ProductosFacturasComponent } from './private/productos-facturas/product
 import { LoginComponent } from './public/login/login.component';
 import { AuthGuard } from './auth.guard';
 import { ClienteFormComponent } from './private/cliente-form/cliente-form.component'; // para el formulario del cliente
+import { FacturaFormComponent } from './private/factura-form/factura-form.component'; // para el formulario de factura
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'login', component: LoginComponent},
   {path: 'clientes', component: ClientesComponent, canActivate: [AuthGuard]},
   {path: 'clientes/add', component: ClienteFormComponent, canActivate: [AuthGuard]}, // para el boton agregar
-  {path: 'clientes/:id', component: ClienteFormComponent, canActivate: [AuthGuard]}, // para la busqueda dando clic en la tabla
+  {path: 'clientes/:id', component: ClienteFormComponent, canActivate: [AuthGuard]}, // para la busqueda dando clic en la tabla cliente
+  {path: 'facturas/add', component: FacturaFormComponent, canActivate: [AuthGuard]}, // para el boton agregar
+  {path: 'facturas/:id', component: FacturaFormComponent, canActivate: [AuthGuard]}, // para la busqueda dando clic en la tabla factura
   {path: 'empleados', component: EmpleadosComponent, canActivate: [AuthGuard]},
   {path: 'facturas', component: FacturasComponent, canActivate: [AuthGuard]},
   {path: 'productos', component: ProductosComponent, canActivate: [AuthGuard]},

@@ -1,14 +1,22 @@
-<div class="row">
-  <div class="col-md-8 mx-auto">
-    <ul class="list-group">
-      <li class="list-group-item">Tabla Productos Facturas</li>
-      <li class="list-group-item list-group-item-primary" *ngFor="let prf of productosFacturas">
-        {{"id="+prf.id
-        +","+"Factura_id="+prf.factura_id
-        +","+"Producto_id="+prf.producto_id
-        +","+"Cantidad="+prf.cantidad
-        +","+"Creado_por="+prf.creado_por
-        +","+"Subtotal="+prf.subtotal}}</li>
-    </ul>
-  </div>
-</div>
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Factura_id</th>
+      <th scope="col">Producto_id</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Creado_por</th>
+      <th scope="col">Subtotal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let prf of productosFacturas">
+      <th scope="row"><a [routerLink]="['/productos-facturas', prf.id]">{{prf.id}}</a></th>
+      <td>{{prf.factura_id}}</td>
+      <td>{{prf.producto_id}}</td>
+      <td>{{prf.cantidad}}</td>
+      <td>{{prf.creado_por}}</td>
+      <td>{{prf.subtotal}}</td>
+    </tr>
+  </tbody>
+</table>

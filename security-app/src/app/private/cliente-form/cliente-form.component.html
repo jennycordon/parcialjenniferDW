@@ -2,26 +2,30 @@
 <div class="row">
   <div class="col"></div>
   <div class="col">
-    <form class="form-group">
+    <form class="form-group" (ngSubmit)="ngOnGuardar()" #form="ngForm">
       <fieldset>
         <label class="control-label" for="idInput">Id</label>
-        <input class="form-control" id="idInput" type="text" placeholder="id..." disabled="">
+        <input class="form-control" id="idInput" type="text" placeholder="id..."
+        [(ngModel)]="idCliente" name="idCliente">
       </fieldset>
       <fieldset>
         <label class="control-label" for="nombreInput">Nombre</label>
-        <input class="form-control" id="nombreInput" type="text" placeholder="nombre...">
+        <input class="form-control" id="nombreInput" type="text" placeholder="nombre..."
+        [(ngModel)]="nombreCliente" name="nombreCliente">
       </fieldset>
       <fieldset>
         <label class="control-label" for="direccionInput">Dirección</label>
-        <input class="form-control" id="direccionInput" type="text" placeholder="direccion...">
+        <input class="form-control" id="direccionInput" type="text" placeholder="direccion..."
+        [(ngModel)]="direccionCliente" name="direccionCliente">
       </fieldset>
       <fieldset>
         <label class="control-label" for="nitInput">Nit</label>
-        <input class="form-control" id="nitInput" type="text" placeholder="nit...">
+        <input class="form-control" id="nitInput" type="text" placeholder="nit..."
+        [(ngModel)]="nitCliente" name="nitCliente">
       </fieldset>
-      <button type="submit" class="btn btn-primary" (click)="ngOnGuardar()">Guardar</button>
-      <button type="submit" class="btn btn-primary" (click)="ngOnEliminar()">Eliminar</button>
-      <button type="submit" class="btn btn-primary" (click)="ngOnCancelar()">Cancelar</button>
+      <button type="submit" class="btn btn-primary">Guardar</button>
+      <button type="submit" class="btn btn-danger" (click)="ngOnEliminar()">Eliminar</button>
+      <button type="submit" class="btn btn-danger" (click)="ngOnCancelar()">Cancelar</button>
     </form>
   </div>
 </div>

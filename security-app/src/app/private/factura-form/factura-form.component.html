@@ -1,0 +1,36 @@
+<!--Formulario para ingresar una factura-->
+<div class="row">
+  <div class="col"></div>
+  <div class="col">
+    <form class="form-group" (ngSubmit)="ngOnGuardar()" #form="ngForm">
+      <fieldset>
+        <label class="control-label" for="idInput">Id</label>
+        <input class="form-control" id="idInput" type="text" placeholder="id..."
+        [(ngModel)]="idFactura" name="idFactura">
+      </fieldset>
+      <fieldset>
+        <label class="control-label" for="cliente_idInput">Cliente_id</label>
+        <input class="form-control" id="cliente_idInput" type="text" placeholder="cliente_id..."
+        [(ngModel)]="cliente_idFactura" name="cliente_idFactura">
+      </fieldset>
+      <fieldset>
+        <label class="control-label" for="empleado_idInput">Empleado_id</label>
+        <input class="form-control" id="empleado_idInput" type="text" placeholder="empleado_id..."
+        [(ngModel)]="empleado_idFactura" name="empleado_idFactura">
+      </fieldset>
+      <fieldset>
+        <label class="control-label" for="creadoInput">Creado</label>
+        <input class="form-control" id="creadoInput" type="text" placeholder="creado..."
+        [(ngModel)]="creadoFactura" name="creadoFactura">
+      </fieldset>
+      <fieldset>
+        <label class="control-label" for="estadoInput">Estado</label>
+        <input class="form-control" id="estadoInput" type="text" placeholder="estado..."
+        [(ngModel)]="estadoFactura" name="estadoFactura">
+      </fieldset>
+      <button type="submit" class="btn btn-primary">Guardar</button>
+      <button type="submit" class="btn btn-danger" (click)="ngOnEliminar()">Eliminar</button>
+      <button type="submit" class="btn btn-danger" (click)="ngOnCancelar()">Cancelar</button>
+    </form>
+  </div>
+</div>

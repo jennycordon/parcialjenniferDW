@@ -1,14 +1,20 @@
-<div class="row">
-  <div class="col-md-8 mx-auto">
-    <ul class="list-group">
-      <li class="list-group-item">Tabla facturas</li>
-      <li class="list-group-item list-group-item-primary" *ngFor="let fact of facturas">
-        {{"Id="+fact.id+","
-        +"cliente_id="+fact.cliente_id
-        +","+"Empleado_id="+fact.empleado_id
-        +","+"creado="+fact.creado
-        +","+"Estado="+fact.estado}}</li>
-    </ul>
-  </div>
-</div>
-
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Cliente_id</th>
+      <th scope="col">Empleado_id</th>
+      <th scope="col">Creado</th>
+      <th scope="col">Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let fact of facturas">
+      <th scope="row"><a [routerLink]="['/facturas', fact.id]">{{fact.id}}</a></th>
+      <td>{{fact.cliente_id}}</td>
+      <td>{{fact.empleado_id}}</td>
+      <td>{{fact.creado}}</td>
+      <td>{{fact.estado}}</td>
+    </tr>
+  </tbody>
+</table>
