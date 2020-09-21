@@ -26,20 +26,30 @@ export class ClienteDataServiceService {
 }
 
   getClientes(){
-  return this.getClientes;
+  //return this.getClientes;
+  return this.httpCliente.get('http://localhost:3000/clientes');
 }
 
 getCliente(id: number){
-  id = id;
-  return this.clientes[id];
+  //id = id;
+  //return this.clientes[id];
+  return this.httpCliente.get('http://localhost:3000/clientes' + id);
 }
 
 updateCliente(id: number, cliente: Cliente){
-  this.clientes[id] = cliente; // en vez de i le puse id
+  //this.clientes[id] = cliente;
+  this.httpCliente.put('http://localhost:3000/clientes/' + id, cliente).subscribe(
+    response => {console.log("result: " + response) },
+    error => { console.log("error " + error)}
+  );
 }
 
 deleteCliente(id: number){
   this.clientes.splice(id, 1);
+  /*this.httpCliente.delete('http://localhost:3000/clientes/' + id).subscribe(//le dejo empleados
+    response => {console.log("result: " + response) },
+    error => { console.log("error " + error)}
+  );*/
 }
 
 }

@@ -5,7 +5,7 @@
     <form class="form-group" (ngSubmit)="ngOnGuardar()" #form="ngForm">
       <fieldset>
         <label class="control-label" for="idInput">Id</label>
-        <input class="form-control" id="idInput" type="text" placeholder="id..."
+        <input class="form-control" id="idInput" type="text" placeholder="id..." disabled="true"
         [(ngModel)]="idCliente" name="idCliente">
       </fieldset>
       <fieldset>
@@ -23,7 +23,7 @@
         <input class="form-control" id="nitInput" type="text" placeholder="nit..."
         [(ngModel)]="nitCliente" name="nitCliente">
       </fieldset>
-      <button type="submit" class="btn btn-primary">Guardar</button>
+      <button type="submit" class="btn btn-primary" (click)="ngOnGuardar()">Guardar</button>
       <button type="submit" class="btn btn-danger" (click)="ngOnEliminar()">Eliminar</button>
       <button type="submit" class="btn btn-danger" (click)="ngOnCancelar()">Cancelar</button>
     </form>

@@ -28,7 +28,7 @@ import { FacturaFormComponent } from './private/factura-form/factura-form.compon
     FacturaFormComponent
   ],
   imports: [
-  BrowserModule,
+    BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule

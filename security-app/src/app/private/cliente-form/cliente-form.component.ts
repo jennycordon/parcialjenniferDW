@@ -27,11 +27,15 @@ export class ClienteFormComponent implements OnInit {
 
       if (this.idParam != null){
         console.log(this.idParam);
-        const cliente = this.service.getCliente(this.idParam);
-        this.idCliente = cliente.id;
-        this.nombreCliente = cliente.nombre;
-        this.direccionCliente = cliente.direccion;
-        this.nitCliente = cliente.nit;
+        this.service.getCliente(this.idParam).subscribe(
+          (clientes: Cliente[]) => {
+            console.log(clientes[0]);
+            this.idCliente = clientes[0].id;
+            this.nombreCliente = clientes[0].nombre;
+            this.direccionCliente = clientes[0].direccion;
+            this.nitCliente = clientes[0].nit;
+          }
+        );
       }
     }
   }

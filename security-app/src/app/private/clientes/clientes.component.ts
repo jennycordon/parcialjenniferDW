@@ -20,9 +20,9 @@ export class ClientesComponent implements OnInit {
   clientes: Cliente[]=[];
 
   ngOnInit(): void {
-    this.clienteService.getCliente().subscribe(
-      res => {
-        this.clientes = res;
+    this.service.getClientes().subscribe(
+      (clientes: Cliente[]) => {
+        this.clientes = clientes;
       }
     );
   }
